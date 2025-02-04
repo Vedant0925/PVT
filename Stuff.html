@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            background-color: #ffebf0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        h1 {
+            color: #e63946;
+            font-size: 3rem;
+            text-align: center;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #yesButton {
+            background-color: #38b000;
+            color: white;
+        }
+
+        #noButton {
+            background-color: #d90429;
+            color: white;
+            position: absolute;
+        }
+
+        #yesButton:hover {
+            background-color: #70e000;
+        }
+
+        #noButton:hover {
+            background-color: #ef233c;
+        }
+    </style>
+</head>
+<body>
+    <h1>BE MY VALENTINE? ❤️</h1>
+    <div class="buttons">
+        <button id="yesButton" onclick="yesClicked()">Yes</button>
+        <button id="noButton" onmouseover="moveButton()">No</button>
+    </div>
+
+    <script>
+        function yesClicked() {
+            alert("KNEW IT ;)");
+        }
+
+        function moveButton() {
+            const button = document.getElementById('noButton');
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
